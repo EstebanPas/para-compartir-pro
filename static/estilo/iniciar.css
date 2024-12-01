@@ -1,0 +1,417 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* Estilos del Header/Nav */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fbfbfb;
+    transition: width .3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons a {
+    margin-left: 20px;
+}
+
+.icons img {
+    width: 24px;
+    height: auto;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #cdb3b3;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #000000;
+}
+
+/* Estilos del Contenedor Principal */
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    background-color: #01fc057c;
+    padding: 2rem;
+}
+
+.login-section {
+    width: 45%;
+    margin-right: 2rem;
+}
+
+.login-form {
+    background-color: #000000;
+    padding: 3rem 4rem;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.login-form h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 15px;
+}
+
+.input-group img {
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 15px;
+    background-color: #333333;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #555555;
+}
+
+/* Estilos del Carrusel */
+.carousel-section {
+    width: 45%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 30px;
+    background: #000000;
+    padding: 2rem;
+}
+
+.carousel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+.carousel-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    background: #ffffff3d;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background: #ffffff;
+}
+
+/* Estilos del Footer */
+.footer {
+    background-color: #000000;
+    padding: 70px 0;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #01fc057c;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(17, 167, 213, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #09c2c2;
+    background-color: #ffffff;
+}
+
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .login-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .login-section,
+    .carousel-section {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+/* Nuevos estilos para el enlace de contraseña olvidada */
+.forgot-password {
+text-align: right;
+margin-top: 1rem;
+margin-bottom: 1rem;
+}
+
+.forgot-password a {
+color: #ffffff;
+text-decoration: none;
+font-size: 0.9rem;
+transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+color: #01fc057c;
+}
+
+/* Estilo para la línea divisoria */
+.divider {
+display: flex;
+align-items: center;
+text-align: center;
+margin: 1.5rem 0;
+color: #ffffff;
+}
+
+.divider::before,
+.divider::after {
+content: '';
+flex: 1;
+border-bottom: 1px solid #ffffff3d;
+}
+
+.divider span {
+padding: 0 10px;
+font-size: 0.9rem;
+}
+
+/* Estilo para botones sociales */
+.social-login {
+display: flex;
+justify-content: center;
+gap: 1rem;
+margin-top: 1rem;
+}
+
+.social-btn {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0.8rem 1.5rem;
+border: 1px solid #ffffff3d;
+border-radius: 15px;
+background: transparent;
+color: #ffffff;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+background: #ffffff1a;
+}
+
+.social-btn i {
+margin-right: 8px;
+}
