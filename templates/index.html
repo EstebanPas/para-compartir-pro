@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Plantas y Ecología en el Hogar</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{% static 'estilo/index.css' %}">
+</head>
+<body>
+
+<header>
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="{% static 'images/Logo de Nombre con Iniciales en Círculo Marketing Digital Tipográfico Minimalista Blanco y Negro.png' %}" alt="Logo">
+        </div>
+        <ul class="menu">
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'plantas' %}">Sobre plantas</a></li>
+            <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
+            <li><a href="{% url 'sembrado' %}">Sembrado</a></li>
+            <li><a href="{% url 'viveros' %}">Viveros</a></li>
+            <li><a href="{% url 'comunidad' %}">comunidad</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        </ul>
+        <div class="icons">
+            <a href="#"><img src="{% static 'images/persona.png' %}" alt="Idioma"></a>
+            <div class="dropdown">
+                <button class="dropbtn">Usuario</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'registro' %}" id="register-link">Registrarse</a>
+                    <a href="{% url 'iniciar' %}" id="login-link">Iniciar Sesión</a>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Bienvenido a Nahuatl, tu guía ecológica</h1>
+    {% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</div>
+
+<div class="carousel-container">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="{% static 'images/catalogo_plant.jpg' %}" alt="Imagen de plantas">
+                <p>Catálogo de plantas para el hogar</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="{% static 'images/sembrado_plant.jpg' %}" alt="Guía de sembrado">
+                <p>Aprende a sembrar y cuidar tus plantas desde casa</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="{% static 'images/vivero_plant.png' %}" alt="Ecología en el hogar">
+                <p>Los mejores viveros para conseguir plantas</p>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Descubre Nuestras Secciones</h2>
+    <p>Explora una gran variedad de recursos ecológicos para embellecer tu hogar y conectar con la naturaleza.</p>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Get Help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Online Shop</h4>
+                <ul>
+                    <li><a href="#">Watch</a></li>
+                    <li><a href="#">Bag</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Dress</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="{% static 'static/java/scripts.js' %}"></script>
+
+</body>
+</html>

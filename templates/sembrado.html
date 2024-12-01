@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Sembrado - Plantas en el Hogar</title>
+    <link rel="stylesheet" href="{% static 'estilo/sembrado.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <img src="{% static 'images/Logo de Nombre con Iniciales en Círculo Marketing Digital Tipográfico Minimalista Blanco y Negro.png' %}" alt="Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'plantas' %}">Sobre plantas</a></li>
+                <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
+                <li><a href="{% url 'sembrado' %}">Sembrado</a></li>
+                <li><a href="{% url 'viveros' %}">Viveros</a></li>
+                <li><a href="{% url 'comunidad' %}">comunidad</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            </ul>
+            <div class="icons">
+                <a href="#"><img src="{% static 'images/persona.png' %}" alt="Idioma"></a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Usuario</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'registro' %}" id="register-link">Registrarse</a>
+                    <a href="{% url 'iniciar' %}" id="login-link">Iniciar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Guía de Sembrado en Casa</h1>
+        <!-- Resto del contenido de las secciones de plantas -->
+    </main>
+
+    <div id="progreso-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Seguimiento de Cultivo</h2>
+            <form id="progreso-form">
+                <div class="form-group">
+                    <label for="fecha-inicio">Fecha de inicio:</label>
+                    <input type="date" id="fecha-inicio" required>
+                </div>
+                <div class="form-group">
+                    <label for="notas">Notas de progreso:</label>
+                    <textarea id="notas" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado actual:</label>
+                    <select id="estado">
+                        <option value="plantado">Recién plantado</option>
+                        <option value="crecimiento">En crecimiento</option>
+                        <option value="floreciendo">Floreciendo</option>
+                        <option value="maduro">Maduro</option>
+                    </select>
+                </div>
+                <button type="submit">Guardar progreso</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'java/sembrado.js' %}" defer></script>
+</body>
+</html>

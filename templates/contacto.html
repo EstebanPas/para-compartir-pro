@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Guía de Plantas y Ecología</title>
+    <link rel="stylesheet" href="{% static 'estilo/contacto.css' %}">
+</head>
+<body>
+
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <img src="{% static 'images/Logo de Nombre con Iniciales en Círculo Marketing Digital Tipográfico Minimalista Blanco y Negro.png' %}" alt="Logo">
+            </div>
+            <ul class="menu">
+                <ul class="menu">
+                    <li><a href="{% url 'index' %}">Inicio</a></li>
+                    <li><a href="{% url 'plantas' %}">Sobre plantas</a></li>
+                    <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
+                    <li><a href="{% url 'sembrado' %}">Sembrado</a></li>
+                    <li><a href="{% url 'viveros' %}">Viveros</a></li>
+                    <li><a href="{% url 'comunidad' %}">comunidad</a></li>
+                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                </ul>
+            <div class="icons">
+                <a href="#"><img src="{% static 'images/persona.png' %}" alt="Idioma"></a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Usuario</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'registro' %}" id="register-link">Registrarse</a>
+                    <a href="{% url 'iniciar' %}" id="login-link">Iniciar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>Noticias</h2>
+        <p>Enterate de las ultimas noticias ambientales</p>
+
+        <p1>Todo lo que se sabe de los incendios en Colombia: dónde están, cuál es la estrategia y cómo ayudar a evitarlos.
+            Las autoridades han informado que el incendio más crítico, ubicado en el municipio de Palermo (Huila), ya fue controlado
+        </p1>
+        <a href="https://elpais.com/america-colombia/2024-09-20/todo-lo-que-se-sabe-de-los-incendios-en-colombia-donde-estan-cual-es-la-estrategia-y-como-ayudar-a-evitarlos.html">
+            <img src="{% static 'images/noticia1.avif' %}" alt="Noticia">
+        </a>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Online Shop</h4>
+                    <ul>
+                        <li><a href="#">Watch</a></li>
+                        <li><a href="#">Bag</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.microsoft.com/es-co/microsoft-teams/log-in"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encabezado de Menú y Productos</title>
+    <link rel="stylesheet" href="{% static 'estilo/catalogo.css' %}"> 
+    <script src="{% static 'java/formulario.js' %}" defer></script> <!-- Enlace al archivo JS -->
+</head>
+<body>
+
+<header>
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="{% static 'images/Logo de Nombre con Iniciales en Círculo Marketing Digital Tipográfico Minimalista Blanco y Negro.png' %}" alt="Logo">
+        </div>
+        <ul class="menu">
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'plantas' %}">Sobre plantas</a></li>
+            <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
+            <li><a href="{% url 'sembrado' %}">Sembrado</a></li>
+            <li><a href="{% url 'viveros' %}">Viveros</a></li>
+            <li><a href="{% url 'comunidad' %}">comunidad</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        </ul>
+        <div class="icons">
+            <a href="#"><img src="{% static 'images/persona.png' %}" alt="Idioma"></a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Usuario</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'registro' %}" id="register-link">Registrarse</a>
+                    <a href="{% url 'iniciar' %}" id="login-link">Iniciar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<h2>flores</h2>
+
+<section class="product-section">
+    <div class="product" onclick="showDetails('Detalles del producto 1')">
+        <h3>Aloe vera</h3>
+        <img src="{% static 'images/aloe vera.jpg' %}" alt="Producto 1">
+        <div class="details">Detalles del producto 1</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 2')">
+        <img src="{% static 'images/Orquídeas.jpg' %}" alt="Producto 2">
+        <div class="details">Detalles del producto 2</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 3')">
+        <img src="{% static 'images/cactus.jpg' %}" alt="Producto 3">
+        <div class="details">Detalles del producto 3</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 4')">
+        <img src="{% static 'images/Helecho de Boston.jpg' %}" alt="Producto 4">
+        <div class="details">Detalles del producto 4</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 5')">
+        <img src="{% static 'images/Philodendron.jpg' %}" alt="Producto 5">
+        <div class="details">Detalles del producto 5</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 6')">
+        <img src="{% static 'images/rosa.jpg' %}" alt="Producto 6">
+        <div class="details">Detalles del producto 6</div>
+    </div>
+</section>
+
+<h2>cactus</h2>
+
+<section class="product-section">
+    <div class="product" onclick="showDetails('Detalles del producto 1')">
+        <h3>Aloe vera</h3>
+        <img src="{% static 'images/aloe vera.jpg' %}" alt="Producto 1">
+        <div class="details">Detalles del producto 1</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 2')">
+        <img src="{% static 'images/Orquídeas.jpg' %}" alt="Producto 2">
+        <div class="details">Detalles del producto 2</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 3')">
+        <img src="{% static 'images/cactus.jpg' %}" alt="Producto 3">
+        <div class="details">Detalles del producto 3</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 4')">
+        <img src="{% static 'images/Helecho de Boston.jpg' %}" alt="Producto 4">
+        <div class="details">Detalles del producto 4</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 5')">
+        <img src="{% static 'images/Philodendron.jpg' %}" alt="Producto 5">
+        <div class="details">Detalles del producto 5</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 6')">
+        <img src="{% static 'images/rosa.jpg' %}" alt="Producto 6">
+        <div class="details">Detalles del producto 6</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 7')">
+        <img src="{% static 'images/Pothos.jpg' %}" alt="Producto 7">
+        <div class="details">Detalles del producto 7</div>
+    </div>
+    <div class="product" onclick="showDetails('Detalles del producto 8')">
+        <img src="{% static 'images/Zamioculca.jpg' %}" alt="Producto 8">
+        <div class="details">Detalles del producto 8</div>
+    </div>
+</section>
+
+<!-- Modal para mostrar detalles del producto -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="modal-details"></p>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">watch</a></li>
+                    <li><a href="#">bag</a></li>
+                    <li><a href="#">shoes</a></li>
+                    <li><a href="#">dress</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="https://web.facebook.com/?refsrc=https%3A%2F%2Fm.facebook.com%2Fprofile.php%3Fref%3Dcontent_filter&gad_source=1&gclid=Cj0KCQjwmt24BhDPARIsAJFYKk0ePyeZ9MnmdWfABP9uQY0MMPHQwv5M1ReAqLEQx_0c5ISmmGKRLh8aAvDAEALw_wcB&_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
